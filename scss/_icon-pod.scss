@@ -1,5 +1,9 @@
 .#{ $ns }icon-pod {
+    border:var(--border-width) var(--border-style);
+    border-radius:var(--border-radius);
+    box-shadow:var(--default-shadow);
     gap:var(--element-gap);
+    padding:var(--element-gap);
 
     figure {
         width:4rem;

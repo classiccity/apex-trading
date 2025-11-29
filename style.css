@@ -13,10 +13,11 @@ Text Domain: ccc-primary-theme
 :root {
   --border-width:2px;
   --border-style:solid;
-  --border-radius:2px;
+  --border-radius:4px;
   --body-font:"Poppins",Helvetica,sans-serif;
   --header-font:"Poppins",Helvetica,sans-serif;
   --element-gap: var(--wp--preset--spacing--40);
+  --default-spacing: var(--wp--preset--spacing--20);
   --default-shadow: 3px 3px 2px rgba(0,0,0,.1);
 }
 
@@ -190,6 +191,44 @@ a:where(:not(.wp-element-button)) {
   background-image: linear-gradient(90deg, var(--wp--preset--color--dark) 0%, var(--wp--preset--color--dark) 30%, transparent 100%);
 }
 
+.is-style-background-color-overlay.has-background {
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.is-style-background-color-overlay.has-background:before {
+  content: "";
+  inset: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+.is-style-background-color-overlay.has-background > * {
+  position: relative;
+  z-index: 1;
+}
+.is-style-background-color-overlay.has-background.has-primary-background-color:before {
+  background-color: var(--wp--preset--color--primary);
+}
+.is-style-background-color-overlay.has-background.has-secondary-background-color:before {
+  background-color: var(--wp--preset--color--secondary);
+}
+.is-style-background-color-overlay.has-background.has-tertiary-background-color:before {
+  background-color: var(--wp--preset--color--tertiary);
+}
+.is-style-background-color-overlay.has-background.has-light-background-color:before {
+  background-color: var(--wp--preset--color--light);
+}
+.is-style-background-color-overlay.has-background.has-dark-background-color:before {
+  background-color: var(--wp--preset--color--dark);
+}
+
 @media screen and (max-width: 750px) {
   .wp-block-columns.is-style-swap-on-mobile > .wp-block-column:first-child {
     order: 2;
@@ -225,7 +264,11 @@ a:where(:not(.wp-element-button)) {
 }
 
 .ccc-icon-pod {
+  border: var(--border-width) var(--border-style);
+  border-radius: var(--border-radius);
+  box-shadow: var(--default-shadow);
   gap: var(--element-gap);
+  padding: var(--element-gap);
 }
 .ccc-icon-pod figure {
   width: 4rem;

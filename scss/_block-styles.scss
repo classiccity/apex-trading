@@ -92,6 +92,54 @@
     }
 }
 
+// Solid overlay
+.is-style-background-color-overlay {
+    &.has-background {
+        background-color: transparent;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            content: "";
+            inset: 0;
+            left: 0;
+            position: absolute;
+            top: 0;
+            background: transparent;
+            background-repeat: no-repeat;
+            background-size: cover;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.8;
+        }
+
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        &.has-primary-background-color:before {
+            background-color: var(--wp--preset--color--primary);
+        }
+
+        &.has-secondary-background-color:before {
+            background-color: var(--wp--preset--color--secondary);
+        }
+
+        &.has-tertiary-background-color:before {
+            background-color: var(--wp--preset--color--tertiary);
+        }
+
+        &.has-light-background-color:before {
+            background-color: var(--wp--preset--color--light);
+        }
+
+        &.has-dark-background-color:before {
+            background-color: var(--wp--preset--color--dark);
+        }
+    }
+}
+
 @media screen and (max-width: $mobile-viewport-size) {
     
     .wp-block-columns.is-style-swap-on-mobile {
