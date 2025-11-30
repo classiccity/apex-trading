@@ -285,6 +285,103 @@ a:where(:not(.wp-element-button)) {
   margin-top: auto;
 }
 
+.ccc-linked-icon-pods__grid {
+  display: grid;
+  gap: var(--element-gap);
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+.ccc-linked-icon-pods.has-columns-1 .ccc-linked-icon-pods__grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.ccc-linked-icon-pods.has-columns-2 .ccc-linked-icon-pods__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.ccc-linked-icon-pods.has-columns-3 .ccc-linked-icon-pods__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.ccc-linked-icon-pods.has-columns-4 .ccc-linked-icon-pods__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.ccc-linked-icon-pods__item {
+  align-items: center;
+  background-color: var(--wp--preset--color--light-alt);
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.ccc-linked-icon-pods__item:hover {
+  box-shadow: none;
+  transform: scale(1.03);
+}
+.ccc-linked-icon-pods__icon {
+  align-items: center;
+  display: flex;
+  margin: 0 0 0.5rem;
+}
+.ccc-linked-icon-pods__title {
+  line-height: 1.2;
+  margin: 0;
+  text-decoration-color: var(--wp--preset--color--primary);
+  text-decoration-thickness: 2px;
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+}
+
+.ccc-testimonials__grid {
+  display: grid;
+  gap: var(--element-gap);
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+.ccc-testimonials.has-columns-1 .ccc-testimonials__grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.ccc-testimonials.has-columns-2 .ccc-testimonials__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.ccc-testimonials.has-columns-3 .ccc-testimonials__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.ccc-testimonials__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--element-gap);
+}
+.ccc-testimonials__item p {
+  margin-top: 0;
+}
+.ccc-testimonials__content {
+  flex: 1;
+}
+.ccc-testimonials__meta {
+  align-items: center;
+  display: grid;
+  gap: var(--element-gap);
+  grid-template-columns: auto 1fr;
+}
+.ccc-testimonials__image {
+  margin: 0;
+}
+.ccc-testimonials__image img {
+  border-radius: var(--border-radius);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.ccc-testimonials__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ccc-testimonials__company {
+  margin: 0;
+}
+.ccc-testimonials__name {
+  margin: 0;
+}
+
 .ccc-hero--large-image {
   padding: var(--wp--preset--spacing--70) 0;
 }

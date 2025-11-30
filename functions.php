@@ -104,6 +104,8 @@ add_action('enqueue_block_editor_assets', 'ccc_primary_theme_enqueue_editor_asse
 
 // Load block style registrations.
 require_once get_template_directory() . '/includes/block-styles/main.php';
+// Load testimonials customizations.
+require_once get_template_directory() . '/includes/testimonials/main.php';
 
 
 
