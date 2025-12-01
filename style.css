@@ -38,6 +38,7 @@ main {
   border-radius: var(--border-radius);
   box-shadow: var(--default-shadow);
   display: block;
+  font-weight: 500;
   padding: 0.6em 1em;
   transition: all 0.2s ease;
 }
@@ -191,6 +192,63 @@ a:where(:not(.wp-element-button)) {
   background-image: linear-gradient(90deg, var(--wp--preset--color--dark) 0%, var(--wp--preset--color--dark) 30%, transparent 100%);
 }
 
+.is-style-background-cut-off-left,
+.is-style-background-cut-off-right {
+  padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--20);
+}
+.is-style-background-cut-off-left.has-background,
+.is-style-background-cut-off-right.has-background {
+  background-color: transparent !important;
+  position: relative;
+  overflow: hidden;
+}
+.is-style-background-cut-off-left:before,
+.is-style-background-cut-off-right:before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  top: 0;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  width: 75%;
+  z-index: 0;
+}
+.is-style-background-cut-off-left > *,
+.is-style-background-cut-off-right > * {
+  position: relative;
+  z-index: 1;
+}
+.is-style-background-cut-off-left.has-primary-background-color:before,
+.is-style-background-cut-off-right.has-primary-background-color:before {
+  background-color: var(--wp--preset--color--primary);
+}
+.is-style-background-cut-off-left.has-secondary-background-color:before,
+.is-style-background-cut-off-right.has-secondary-background-color:before {
+  background-color: var(--wp--preset--color--secondary);
+}
+.is-style-background-cut-off-left.has-tertiary-background-color:before,
+.is-style-background-cut-off-right.has-tertiary-background-color:before {
+  background-color: var(--wp--preset--color--tertiary);
+}
+.is-style-background-cut-off-left.has-light-background-color:before,
+.is-style-background-cut-off-right.has-light-background-color:before {
+  background-color: var(--wp--preset--color--light);
+}
+.is-style-background-cut-off-left.has-dark-background-color:before,
+.is-style-background-cut-off-right.has-dark-background-color:before {
+  background-color: var(--wp--preset--color--dark);
+}
+
+.is-style-background-cut-off-left:before {
+  left: 0;
+}
+
+.is-style-background-cut-off-right:before {
+  left: 25%;
+}
+
 .is-style-background-color-overlay.has-background {
   background-color: transparent;
   position: relative;
@@ -255,7 +313,14 @@ a:where(:not(.wp-element-button)) {
 }
 .ccc-cta {
   padding: var(--wp--preset--spacing--70);
+  border-radius: var(--border-radius);
+  box-shadow: var(--default-shadow);
 }
+.ccc-cta-thin {
+  border-radius: var(--border-radius);
+  box-shadow: var(--default-shadow);
+}
+
 .ccc-image-column {
   gap: var(--element-gap);
 }

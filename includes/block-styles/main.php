@@ -81,6 +81,22 @@ function ccc_primary_theme_register_block_styles(): void
     );
 
     register_block_style(
+        'core/group',
+        [
+            'name'  => 'background-cut-off-left',
+            'label' => __('BG Cut Left', 'ccc-primary-theme'),
+        ]
+    );
+
+    register_block_style(
+        'core/group',
+        [
+            'name'  => 'background-cut-off-right',
+            'label' => __('BG Cut Right', 'ccc-primary-theme'),
+        ]
+    );
+
+    register_block_style(
         'core/paragraph',
         [
             'name'  => 'eyebrow',

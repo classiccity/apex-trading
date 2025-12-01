@@ -2,8 +2,15 @@
 
 .#{ $ns }cta {
     padding:var(--wp--preset--spacing--70);
+    border-radius:var(--border-radius);
+        box-shadow:var(--default-shadow);
 
     &--full-width {
         // TODO: define full-width variation.
+    }
+
+    &-thin {
+        border-radius:var(--border-radius);
+        box-shadow:var(--default-shadow);
     }
 }
