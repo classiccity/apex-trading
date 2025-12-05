@@ -26,6 +26,37 @@ Text Domain: ccc-primary-theme
   position: fixed;
   width: 100%;
   z-index: 9;
+  border: none;
+  box-shadow: 0 20px 70px -30px #647b81;
+}
+
+.wp-block-navigation-item__label {
+  font-weight: 500;
+}
+
+.wp-block-navigation__submenu-container {
+  right: auto !important;
+  left: 0 !important;
+  min-width: 150px !important;
+  max-width: fit-content !important;
+  border-radius: 0.3rem;
+}
+
+.wp-block-navigation-link {
+  border-radius: 0.3rem;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+  padding: 10px;
+}
+
+.wp-block-navigation-item__content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.wp-block-navigation-item__content:hover .wp-block-navigation-item__label {
+  color: #61a0b5;
 }
 
 main {
@@ -517,4 +548,6 @@ a:where(:not(.wp-element-button)) {
 }
 .ccc-icon-list > p .wp-font-awesome-icon {
   margin-right: var(--wp--preset--spacing--40);
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
