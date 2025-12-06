@@ -187,6 +187,38 @@ header.wp-block-template-part > .wp-block-group > .wp-block-group{
     right: 5px;
 }
 
+// footer
+.apex-footer a{
+    text-decoration: none;
+    font-weight: 300;
+    color: #939eb8
+;
+}
+
+.apex-footer a:hover{
+    text-decoration: none;
+    font-weight: 300;
+    color: #61a0b5;
+}
+
+.apex-footer-bottom-row .wp-block-genesis-blocks-gb-columns{
+    width: 100%;
+}
+
+.apex-footer-images .gb-block-layout-column-inner{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.apex-footer-top-row .wp-block-genesis-blocks-gb-columns{
+    width: 100%;
+}
+
+.apex-footer-logo-column .wp-block-image{
+    max-width: 200px;
+}
+
 // Body spacing
 main {
     margin-top: 0;

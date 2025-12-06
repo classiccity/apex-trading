@@ -232,3 +232,10 @@ $background-cut-off: 75%;
         grid-template-columns: 1fr;
     }
 }
+
+@media screen and (max-width:781px) {
+    .is-style-background-cut-off-left.has-tertiary-background-color:before, .is-style-background-cut-off-right.has-tertiary-background-color:before{
+        left: 0;
+        width: 100%;
+    }
+}
