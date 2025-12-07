@@ -1,12 +1,12 @@
 .#{$ns}hero {
 
     &--large-image {
-        padding:var(--wp--preset--spacing--70) 0;
+        padding:var(--wp--preset--spacing--70) 25px;
     }
     &--two-column {
-        padding:var(--wp--preset--spacing--70) 0;
+        padding:var(--wp--preset--spacing--70) 25px;
     }
     &--just-text {
-        padding:var(--wp--preset--spacing--70) 0;
+        padding:var(--wp--preset--spacing--70) 25px;
     }
 }

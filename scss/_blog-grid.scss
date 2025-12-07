@@ -1,0 +1,16 @@
+.gb-block-post-grid .gb-block-post-grid-image img{
+    max-height: 250px;
+    object-fit: cover;
+}
+
+@media screen and (max-width:1000px) {
+    .gb-post-grid-items{
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .gb-post-grid-items{
+        grid-template-columns: 1fr !important;
+    }
+}
