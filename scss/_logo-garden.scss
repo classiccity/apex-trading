@@ -1,0 +1,51 @@
+.logo-garden{
+    .inner-grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: var(--wp--preset--spacing--50);
+    }
+
+    .logo-garden-item{
+        text-align: center;
+
+        a{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-title{
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        img{
+            max-height: 200px;
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        .inner-grid-container{
+            grid-template-columns: 1fr;
+        }
+
+        .inner-grid-container{
+            grid-template-columns: 1fr;
+        }
+
+        .logo-garden-item{
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .is-style-mobile-two-column .logo-garden .inner-grid-container{
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+

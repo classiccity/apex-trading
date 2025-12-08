@@ -24,4 +24,11 @@
     .wp-block-buttons {
         margin-top: auto;
     }
+
 }
+
+@media screen and (max-width:768px) {
+        .ccc-linked-icon-pods__grid{
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        }
+    }
