@@ -214,6 +214,10 @@ header.wp-block-template-part > .wp-block-group > .wp-block-group{
     padding-top: 1.5rem;
 }
 
+.apex-footer-bottom-row .wp-block-genesis-blocks-gb-columns p{
+    margin-top: 0;
+}
+
 .apex-footer-images .gb-block-layout-column-inner{
     display: flex;
     flex-wrap: wrap;
@@ -412,4 +416,21 @@ a:where(:not(.wp-element-button)) {
 .wp-block-navigation__responsive-container-close{
     top: 15px;
     right: 15px;
+}
+
+@media screen and (max-width:1200px) {
+    .icon-row-pattern{
+        padding-left: var(--wp--preset--spacing--40);
+        padding-right: var(--wp--preset--spacing--40);
+    }
+}
+
+.ccc-hero--large-image {
+  padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--40);
+}
+.ccc-hero--two-column {
+  padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--40);
+}
+.ccc-hero--just-text {
+  padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--40);
 }

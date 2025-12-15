@@ -18,7 +18,7 @@
 
     .post-grid-title{
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .content-container{
@@ -94,3 +94,88 @@
 
 }
 
+
+
+.wp-block-post-template{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--wp--preset--spacing--50);
+
+    .wp-block-post{
+        margin: 0;
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        margin-bottom: 2rem;
+    }
+
+    .wp-block-post-title{
+        padding-top: var(--wp--preset--spacing--40);
+        padding-left: var(--wp--preset--spacing--40);
+        padding-right: var(--wp--preset--spacing--40);
+        margin-top: 0;
+    }
+
+    .wp-block-post-excerpt{
+        margin-top: 0;
+        padding-left: var(--wp--preset--spacing--40);
+        padding-right: var(--wp--preset--spacing--40);
+        padding-bottom: var(--wp--preset--spacing--40);;
+    }
+
+    .wp-block-post-date{
+        padding-left: var(--wp--preset--spacing--40);
+        padding-right: var(--wp--preset--spacing--40);
+    }
+
+
+    .wp-block-post-title h2{
+        margin-top: 0;
+    }
+
+    .wp-block-post-title a{
+        margin-top: 0;
+        margin-bottom: 16px;
+        display: flex;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 26px;
+        color: #4f6281;
+        line-height: 1.2;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .wp-block-post-excerpt__more-text{
+        margin-top: 16px;
+    }
+
+    .wp-block-post-excerpt__more-link{
+        width: fit-content;
+        line-height: 1;
+        font-size: 16px;
+        position: relative;
+        padding: 0;
+        padding-right: 30px;
+        text-decoration: none !important;
+        transition: .25s;
+        font-weight: 500;
+        color: #939eb8;
+
+        .link__icon{
+            position: absolute;
+            right: 10px;
+            font-size: 16px;
+            transition: .25s;
+        }
+
+        &:hover{
+            .link__icon{
+                right: 0;
+                transition: .25s;
+            }
+        }
+    }
+}
