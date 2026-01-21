@@ -564,6 +564,26 @@ main {
   padding-bottom: 0 !important;
 }
 
+h1.header-contained {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  color: #fff !important;
+  text-shadow: 3px 2px 6px rgba(0, 0, 0, 0.6) !important;
+  max-width: 1140px !important;
+}
+
+.wp-block-term-description p {
+  margin-bottom: 1rem;
+}
+
+.state-location-container .entry-content.wp-block-post-content p {
+  text-align: center;
+}
+
+.background-no-image {
+  background-color: #e2e3ed !important;
+}
+
 .is-style-eyebrow {
   font-weight: bold;
   text-transform: uppercase;

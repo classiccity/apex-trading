@@ -837,3 +837,41 @@ function apex_trading_state_codes(): array
 {
     return apex_trading_state_map();
 }
+
+add_action('acf/init', 'apex_trading_register_state_featured_image_field');
+
+function apex_trading_register_state_featured_image_field(): void
+{
+    if (! function_exists('acf_add_local_field_group')) {
+        return;
+    }
+
+    acf_add_local_field_group([
+        'key'    => 'group_apex_seller_state_featured_image',
+        'title'  => 'State Featured Image',
+        'fields' => [
+            [
+                'key'   => 'field_apex_seller_state_featured_image',
+                'label' => 'Featured Image',
+                'name'  => 'featured_image',
+                'type'  => 'image',
+                'return_format' => 'url', // IMPORTANT: matches your hero block
+                'preview_size'  => 'medium',
+                'library'       => 'all',
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'taxonomy',
+                    'operator' => '==',
+                    'value'    => APEX_SELLER_TAXONOMY,
+                ],
+            ],
+        ],
+        'position'     => 'normal',
+        'style'        => 'default',
+        'active'       => true,
+        'show_in_rest' => 1,
+    ]);
+}

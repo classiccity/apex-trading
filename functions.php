@@ -148,3 +148,4 @@ add_filter( 'wp_theme_json_data_default', function( $theme_json ) {
 	// Update the theme JSON data.
 	return $theme_json->update_with( $data );
 });
+
