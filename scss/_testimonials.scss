@@ -18,6 +18,7 @@
     }
 
     &__item {
+        background-color: #fff;
         display: flex;
         flex-direction: column;
         gap: var(--element-gap);

@@ -18,7 +18,7 @@ Text Domain: ccc-primary-theme
   --header-font:"Poppins",Helvetica,sans-serif;
   --element-gap: var(--wp--preset--spacing--40);
   --default-spacing: var(--wp--preset--spacing--20);
-  --default-shadow: 3px 3px 2px rgba(0,0,0,.1);
+  --default-shadow: 3px 3px 14px rgba(0,0,0,0.6);
 }
 
 @media screen and (max-width: 1200px) {
@@ -45,6 +45,7 @@ Text Domain: ccc-primary-theme
   left: 0 !important;
   left: -30px !important;
   min-width: 150px !important;
+  max-width: -moz-fit-content !important;
   max-width: fit-content !important;
   border-radius: 0.3rem;
 }
@@ -86,13 +87,16 @@ Text Domain: ccc-primary-theme
     width: 100%;
   }
   .nav-register a {
+    width: -moz-fit-content !important;
     width: fit-content !important;
     margin-right: auto;
   }
   .nav-login {
+    width: -moz-fit-content !important;
     width: fit-content !important;
   }
   .nav-login a {
+    width: -moz-fit-content !important;
     width: fit-content !important;
     margin-right: auto;
   }
@@ -233,12 +237,15 @@ main {
   box-shadow: var(--default-shadow);
   display: block;
   font-weight: 500;
-  padding: 0.6em 1em;
+  padding: 0.9em 1.9em;
   transition: all 0.2s ease;
 }
 .wp-block-button .wp-block-button__link:hover {
   box-shadow: none;
   transform: scale(1.1);
+}
+.wp-block-button:not(.is-style-outline) .wp-block-button__link {
+  border: var(--border-width) solid transparent;
 }
 
 body {
@@ -255,7 +262,7 @@ li {
 }
 
 h1 {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 h2 {
@@ -295,6 +302,7 @@ h6 {
 }
 
 .has-primary-background-color.has-background {
+  background-image: -webkit-linear-gradient(-135deg, #6fbd7a 10%, #c1d446 100%);
   color: var(--wp--preset--color--dark);
 }
 .has-primary-background-color.has-background a:where(:not(.wp-element-button)) {
@@ -392,6 +400,7 @@ a:where(:not(.wp-element-button)) {
   }
   .wp-block-navigation-item.has-child {
     position: relative;
+    width: -moz-fit-content;
     width: fit-content;
     padding-right: 20px;
     width: 100%;
@@ -495,13 +504,15 @@ main {
 }
 
 .large-icons-custom .ccc-icon-pod figure {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 130px !important;
   height: 130px !important;
 }
 
 .large-icons-custom .ccc-icon-pod figure img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .ccc-linked-icon-pods__title {
@@ -519,7 +530,8 @@ main {
 
 .events-grid .post-grid-image img {
   max-height: 200px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 /* Make each post card a vertical flex container */
@@ -864,6 +876,7 @@ h1.header-contained {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .ccc-testimonials__item {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   gap: var(--element-gap);
@@ -891,7 +904,8 @@ h1.header-contained {
   height: auto;
   width: 100%;
   max-width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .ccc-testimonials__details {
   display: flex;
@@ -913,7 +927,8 @@ h1.header-contained {
 .ccc-testimonials .wp-block-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
@@ -998,7 +1013,8 @@ h1.header-contained {
 
 .gb-block-post-grid .gb-block-post-grid-image img {
   max-height: 250px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .gb-block-post-grid header .gb-block-post-grid-title {
@@ -1052,7 +1068,8 @@ h1.header-contained {
 .post-grid-custom img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .post-grid-custom a {
   display: flex;
@@ -1065,6 +1082,7 @@ h1.header-contained {
   text-decoration: underline;
 }
 .post-grid-custom .post-grid-readmore {
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1;
   font-size: 16px;
@@ -1144,6 +1162,7 @@ h1.header-contained {
   margin-top: 16px;
 }
 .wp-block-post-template .wp-block-post-excerpt__more-link {
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1;
   font-size: 16px;
@@ -1178,6 +1197,7 @@ h1.header-contained {
 
 .wp-block-query-pagination {
   justify-content: center;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -1251,6 +1271,4 @@ h1.header-contained {
   .is-style-mobile-two-column .logo-garden .inner-grid-container {
     grid-template-columns: 1fr 1fr !important;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
