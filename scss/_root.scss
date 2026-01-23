@@ -252,7 +252,7 @@ main {
         border-radius:var(--border-radius);
         box-shadow:var(--default-shadow);
         display: block;
-        font-weight: 500;
+        font-weight: 600;
         padding:0.9em 1.9em;
         transition: all 0.2s ease;
 
@@ -297,7 +297,7 @@ h4 {
 }
 
 // Header font size clamps
-h1 { @include create-clamp(2.5, 3.5); }
+h1 { @include create-clamp(2.2, 2.5); font-weight: bold; }
 h2 { @include create-clamp(2, 2.75); }
 h3 { @include create-clamp(1.75, 2); }
 h4 { @include create-clamp(1.35, 1.75); }
