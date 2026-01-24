@@ -26,6 +26,7 @@ if (! empty($context['block']['align'])) {
     $classes[] = 'align' . $context['block']['align'];
 }
 
+
 $pods = $context['pods'] ?? [];
 
 if (empty($pods)) {
@@ -60,7 +61,7 @@ if (empty($pods)) {
                         rel="<?php echo esc_attr($rel); ?>"
                     <?php endif; ?>
                 <?php endif; ?>
-                class="ccc-icon-pod ccc-linked-icon-pods__item"
+                class="ccc-icon-pod <?=(!$title) ? 'has-no-title' : ''; ?> ccc-linked-icon-pods__item"
             >
                 <?php if (! empty($icon['url'])) :
                     $alt_text = $icon['alt'] ?? $title;

@@ -1,0 +1,8 @@
+.#{$ns}partner {
+    border-radius:var(--border-radius);
+    box-shadow:var(--default-shadow);
+
+    > .wp-block-columns {
+        padding:var(--wp--preset--spacing--50);
+    }
+}

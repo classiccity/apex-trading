@@ -18,7 +18,8 @@ Text Domain: ccc-primary-theme
   --header-font:"Poppins",Helvetica,sans-serif;
   --element-gap: var(--wp--preset--spacing--40);
   --default-spacing: var(--wp--preset--spacing--20);
-  --default-shadow: 3px 3px 14px rgba(0,0,0,0.6);
+  --default-shadow: 3px 3px 14px rgba(0,0,0,0.2);
+  --hover-shadow:9px 9px 23px rgb(0,0,0, .4);
 }
 
 @media screen and (max-width: 1200px) {
@@ -241,8 +242,8 @@ main {
   transition: all 0.2s ease;
 }
 .wp-block-button .wp-block-button__link:hover {
-  box-shadow: none;
-  transform: scale(1.1);
+  box-shadow: var(--hover-shadow);
+  transform: scale(1.03);
 }
 .wp-block-button:not(.is-style-outline) .wp-block-button__link {
   border: var(--border-width) solid transparent;
@@ -250,10 +251,12 @@ main {
 
 body {
   font-family: var(--body-font);
+  font-weight: 300;
   line-height: 1.2;
 }
 
 p, li {
+  font-weight: 300;
   line-height: 1.5;
 }
 
@@ -266,7 +269,7 @@ h1 {
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 h3 {
@@ -344,10 +347,7 @@ h6 {
 }
 
 a:where(:not(.wp-element-button)) {
-  color: var(--wp--preset--color--dark);
-  font-weight: bold;
-  text-decoration-color: var(--wp--preset--color--primary);
-  text-decoration-thickness: 3px;
+  color: var(--wp--preset--color--secondary);
 }
 
 /* Make the submenu toggle visible and clickable (mobile & desktop safe) */
@@ -569,10 +569,6 @@ main {
   height: 100%;
 }
 
-.post-grid-custom .post-grid-excerpt {
-  flex: 1;
-}
-
 .wp-block-post-template .wp-block-post {
   padding-bottom: 0 !important;
 }
@@ -791,11 +787,18 @@ h1.header-contained {
 }
 
 .ccc-icon-pod {
-  border: var(--border-width) var(--border-style);
+  background-color: #f8f9fd;
+  border: 1px solid #e1e4f4 !important;
   border-radius: var(--border-radius);
-  box-shadow: var(--default-shadow);
   gap: var(--element-gap);
   padding: var(--element-gap);
+}
+.ccc-icon-pod:hover {
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+.ccc-icon-pod.has-no-title figure {
+  height: 5rem !important;
+  margin-bottom: 0;
 }
 .ccc-icon-pod figure {
   height: 3rem;
@@ -845,7 +848,6 @@ h1.header-contained {
   transition: all 0.2s ease;
 }
 .ccc-linked-icon-pods__item:hover {
-  box-shadow: none;
   transform: scale(1.03);
 }
 .ccc-linked-icon-pods__icon {
@@ -854,36 +856,43 @@ h1.header-contained {
   margin: 0 0 0.5rem;
 }
 .ccc-linked-icon-pods__title {
+  font-weight: normal;
   line-height: 1.2;
   margin: 0;
   text-decoration-color: var(--wp--preset--color--primary);
-  text-decoration-thickness: 2px;
-  text-decoration-style: solid;
-  text-decoration-line: underline;
 }
 
 .ccc-testimonials__grid {
-  display: grid;
-  gap: var(--element-gap);
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  -moz-column-gap: var(--element-gap);
+       column-gap: var(--element-gap);
 }
 .ccc-testimonials.has-columns-1 .ccc-testimonials__grid {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  -moz-columns: auto 1;
+       columns: auto 1;
 }
 .ccc-testimonials.has-columns-2 .ccc-testimonials__grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  -moz-columns: auto 2;
+       columns: auto 2;
 }
 .ccc-testimonials.has-columns-3 .ccc-testimonials__grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  -moz-columns: auto 3;
+       columns: auto 3;
 }
 .ccc-testimonials__item {
   background-color: #fff;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   gap: var(--element-gap);
+  margin-bottom: var(--element-gap);
 }
 .ccc-testimonials__item p {
   margin-top: 0;
+}
+.ccc-testimonials__item:hover {
+  box-shadow: none;
+}
+.ccc-testimonials__item.ccc-icon-pod figure {
+  height: auto !important;
 }
 .ccc-testimonials__content {
   flex: 1;
@@ -893,18 +902,16 @@ h1.header-contained {
   display: grid;
   gap: var(--element-gap);
   grid-template-columns: auto 1fr;
-  grid-template-columns: minmax(0, 1fr) 1fr;
 }
 .ccc-testimonials__image {
   margin: 0;
   max-width: 100%;
 }
 .ccc-testimonials__image img {
-  border-radius: var(--border-radius);
   display: block;
-  height: auto;
-  width: 100%;
-  max-width: 100%;
+  height: auto !important;
+  width: 4rem !important;
+  max-width: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -934,10 +941,12 @@ h1.header-contained {
 
 @media screen and (max-width: 768px) {
   .ccc-testimonials__grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    -moz-columns: auto 1 !important;
+         columns: auto 1 !important;
   }
   .is-style-mobile-two-column .ccc-testimonials__grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    -moz-columns: auto 1 !important;
+         columns: auto 1 !important;
   }
 }
 .ccc-hero--large-image {
@@ -1272,4 +1281,11 @@ h1.header-contained {
   .is-style-mobile-two-column .logo-garden .inner-grid-container {
     grid-template-columns: 1fr 1fr !important;
   }
+}
+.ccc-partner {
+  border-radius: var(--border-radius);
+  box-shadow: var(--default-shadow);
+}
+.ccc-partner > .wp-block-columns {
+  padding: var(--wp--preset--spacing--50);
 }/*# sourceMappingURL=style.css.map */

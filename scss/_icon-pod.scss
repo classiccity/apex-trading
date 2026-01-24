@@ -1,9 +1,20 @@
 .#{ $ns }icon-pod {
-    border:var(--border-width) var(--border-style);
+    background-color: #f8f9fd;
+    border:1px solid #e1e4f4 !important;
     border-radius:var(--border-radius);
-    box-shadow:var(--default-shadow);
     gap:var(--element-gap);
     padding:var(--element-gap);
+
+    &:hover {
+        box-shadow:9px 9px 16px rgb(163, 177, 198, .6), -9px -9px 16px rgba(255, 255, 255, .5);
+    }
+
+    &.has-no-title {
+        figure {
+            height:5rem !important;
+            margin-bottom: 0;
+        }
+    }
 
     figure {
         height:3rem;

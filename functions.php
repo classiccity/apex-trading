@@ -48,7 +48,7 @@ function ccc_primary_theme_enqueue_assets(): void
 
     wp_enqueue_style(
         'ccc-primary-theme-style',
-        get_stylesheet_uri(),
+        get_stylesheet_directory_uri().'/scss/style.css',
         [],
         $theme_version
     );
@@ -95,7 +95,7 @@ function ccc_primary_theme_enqueue_editor_assets(): void
 {
     wp_enqueue_style(
         'ccc-primary-theme-editor-style',
-        get_stylesheet_uri(),
+        get_stylesheet_directory_uri().'/scss/style.css',
         [],
         wp_get_theme()->get('Version')
     );
