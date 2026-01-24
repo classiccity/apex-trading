@@ -1,6 +1,8 @@
 .#{$ns}partner {
+    background-color: #fff;
     border-radius:var(--border-radius);
     box-shadow:var(--default-shadow);
+    overflow: hidden;
 
     > .wp-block-columns {
         padding:var(--wp--preset--spacing--50);
