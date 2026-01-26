@@ -251,6 +251,7 @@ main {
 
 body {
   font-family: var(--body-font);
+  color: #4f6281;
   font-weight: 300;
   line-height: 1.2;
 }
