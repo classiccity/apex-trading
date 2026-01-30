@@ -1,18 +1,36 @@
 <?php
-$term = get_queried_object();
+// Allow editors to pick a state; fall back to the current archive term.
+$selected_state = function_exists('get_field') ? get_field('state') : null;
+$state_term = null;
 
-if (! $term || ! isset($term->term_id)) {
+if ($selected_state instanceof WP_Term) {
+    $state_term = $selected_state;
+} elseif (is_array($selected_state) && isset($selected_state['term_id'])) {
+    $state_term = get_term((int) $selected_state['term_id'], APEX_SELLER_TAXONOMY);
+} elseif (is_numeric($selected_state)) {
+    $state_term = get_term((int) $selected_state, APEX_SELLER_TAXONOMY);
+}
+
+if (! $state_term || is_wp_error($state_term)) {
+    $queried = get_queried_object();
+    if ($queried instanceof WP_Term && $queried->taxonomy === APEX_SELLER_TAXONOMY) {
+        $state_term = $queried;
+    }
+}
+
+if (! $state_term || ! isset($state_term->term_id)) {
+    echo '<p>' . esc_html__('No sellers found for this state yet.', 'ccc-primary-theme') . '</p>';
     return;
 }
 
 $args = [
     'post_type'      => APEX_SELLER_POST_TYPE,
-    'posts_per_page' => -1, // change this number if you want
+    'posts_per_page' => -1,
     'tax_query'      => [
         [
             'taxonomy' => APEX_SELLER_TAXONOMY,
             'field'    => 'term_id',
-            'terms'    => $term->term_id,
+            'terms'    => $state_term->term_id,
         ],
     ],
 ];
