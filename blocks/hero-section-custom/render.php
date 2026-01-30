@@ -12,6 +12,10 @@ if (! $term || empty($term->term_id)) {
     return;
 }
 
+$custom_title = get_field('custom_title', $term);
+
+$title_text = !empty($custom_title) ? $custom_title : $term->name;
+
 // Get term featured image (ACF image field on taxonomy)
 $background_image = get_field('featured_image', $term);
 
@@ -34,7 +38,7 @@ $style .= "padding-bottom:{$padding_bottom}px;";
      style="<?php echo esc_attr($style); ?>">
 
     <h1 class="wp-block-heading has-text-align-center header-contained">
-        Purchasing Wholesale Cannabis in <?php echo esc_html($term->name); ?> is Easy with Apex Trading
+        <?php echo esc_html($title_text); ?>
     </h1>
 
 </div>

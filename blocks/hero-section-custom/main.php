@@ -55,6 +55,14 @@ function ccc_primary_register_term_hero_fields(): void
                 'wrapper'       => ['width' => 50],
             ],
             [
+                'key'   => 'field_ccc_th_custom_title',
+                'label' => __('Custom Title', 'ccc-primary-theme'),
+                'name'  => 'custom_title',
+                'type'  => 'text',
+                'instructions' => __('Optional: overrides default hero title for this term.', 'ccc-primary-theme'),
+                'wrapper'       => ['width' => 50],
+            ],
+            [
                 'key'   => 'field_ccc_th_padding_top',
                 'label' => __('Padding Top (px)', 'ccc-primary-theme'),
                 'name'  => 'padding_top',

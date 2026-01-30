@@ -840,6 +840,44 @@ function apex_trading_state_codes(): array
 
 add_action('acf/init', 'apex_trading_register_state_featured_image_field');
 
+add_action('acf/init', 'apex_trading_register_state_custom_title_field');
+
+function apex_trading_register_state_custom_title_field(): void
+{
+    if (! function_exists('acf_add_local_field_group')) {
+        return;
+    }
+
+    acf_add_local_field_group([
+        'key'    => 'group_apex_seller_state_custom_title',
+        'title'  => 'State Custom Title',
+        'fields' => [
+            [
+                'key'   => 'field_apex_seller_state_custom_title',
+                'label' => 'Custom Title',
+                'name'  => 'custom_title',
+                'type'  => 'text',
+                'instructions' => 'Optional: overrides the default hero title for this state.',
+                'wrapper' => ['width' => 100],
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'taxonomy',
+                    'operator' => '==',
+                    'value'    => APEX_SELLER_TAXONOMY,
+                ],
+            ],
+        ],
+        'position'     => 'normal',
+        'style'        => 'default',
+        'active'       => true,
+        'show_in_rest' => 1,
+    ]);
+}
+
+
 function apex_trading_register_state_featured_image_field(): void
 {
     if (! function_exists('acf_add_local_field_group')) {
