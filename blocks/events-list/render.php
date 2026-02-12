@@ -27,7 +27,7 @@ $events = get_field('events') ?: [];
                     <div class="content-container">
                         <?php if ($title): ?>
                             <h3 class="post-grid-title">
-                                <a href="<?php echo esc_url($url ?: '#'); ?>"><?php echo esc_html($title); ?></a>
+                                <a href="<?php echo esc_url($url ?: '#'); ?>" target="_blank"><?php echo esc_html($title); ?></a>
                             </h3>
                         <?php endif; ?>
 
