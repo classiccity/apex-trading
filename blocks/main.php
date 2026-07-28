@@ -17,3 +17,4 @@ require_once __DIR__ . '/post-grid/main.php';
 require_once __DIR__ . '/logo-garden/main.php';
 require_once __DIR__ . '/hero-section-custom/main.php';
 require_once __DIR__ . '/state-location-pods/main.php';
+require_once __DIR__ . '/seller-app-link/main.php';
